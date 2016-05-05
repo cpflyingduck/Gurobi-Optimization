@@ -28,7 +28,8 @@ public class Main {
 
 
 	public static void main(String[] args) throws FileNotFoundException, Exception {
-	
+		// TODO Auto-generated method stub
+
 		// get the student, course and term matrix
 		File file1 = new File(fileLoc1);
 		Student studentCourseTerm = new Student(file1);

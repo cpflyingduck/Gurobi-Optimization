@@ -8,8 +8,8 @@ import gurobi.*;
 public class Main {
 
 	// provide the path for the student, course id and the semester data
-	//static String fileLoc1 = "../Gurobi/resources/small/student_demand_10.csv";
-	static String fileLoc1 = "../Gurobi/resources/medium/student_demand_600.csv";
+	static String fileLoc1 = "../Gurobi/resources/small/student_demand_10.csv";
+	//static String fileLoc1 = "../Gurobi/resources/medium/student_demand_600.csv";
 	//static String fileLoc1 = "../Gurobi/resources/testfiles/demand10000.csv";
 	
 	// provide the path for the course dependency
@@ -28,7 +28,8 @@ public class Main {
 
 
 	public static void main(String[] args) throws FileNotFoundException, Exception {
-	
+		// TODO Auto-generated method stub
+
 		// get the student, course and term matrix
 		File file1 = new File(fileLoc1);
 		Student studentCourseTerm = new Student(file1);
@@ -151,23 +152,23 @@ public class Main {
 			}
 			
 			//this is the second equation
-/*			
-			for (int a = 0; a < TOTAL_COURSE; a++) {
-				for (int b = 0; b < TOTAL_COURSE; b++) {
-					if (Ap[a][b] == 1) { // b is pre-req. for a
-						for (int i = 0; i < TOTAL_STUDENT; i++) {
-							GRBLinExpr exprLeftSide = new GRBLinExpr();
-							GRBLinExpr exprRightSide = new GRBLinExpr();
-							for (int k = 0; k < TOTAL_TERM; k++) {
-								exprLeftSide.addTerm(k - TOTAL_STUDENT + 1, Y[i][b][k]);
-								exprRightSide.addTerm(TOTAL_STUDENT - k, Y[i][a][k]);
-								model.addConstr(exprLeftSide, GRB.LESS_EQUAL, exprRightSide, "Pre requisite");
-							}
-						}
-					}
-				}
-			}
-*/
+			
+//			for (int a = 0; a < TOTAL_COURSE; a++) {
+//				for (int b = 0; b < TOTAL_COURSE; b++) {
+//					if (Ap[a][b] == 1) { // b is pre-req. for a
+//						for (int i = 0; i < TOTAL_STUDENT; i++) {
+//							GRBLinExpr exprLeftSide = new GRBLinExpr();
+//							GRBLinExpr exprRightSide = new GRBLinExpr();
+//							for (int k = 0; k < TOTAL_TERM; k++) {
+//								exprLeftSide.addTerm(k - TOTAL_STUDENT + 1, Y[i][b][k]);
+//								exprRightSide.addTerm(TOTAL_STUDENT - k, Y[i][a][k]);
+//								model.addConstr(exprLeftSide, GRB.LESS_EQUAL, exprRightSide, "Pre requisite");
+//							}
+//						}
+//					}
+//				}
+//			}
+
 			// constraint 5: courses offerings in different semester
 
 			for (int i = 0; i < TOTAL_STUDENT; i++) {

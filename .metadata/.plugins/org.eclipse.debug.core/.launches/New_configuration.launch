@@ -6,7 +6,6 @@
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="false"/>
 <mapAttribute key="org.eclipse.debug.core.environmentVariables">
 <mapEntry key="GRB_LICENCE_FILE" value="/home/ubuntu/gurobi.lic"/>
 <mapEntry key="GUROBI_HOME" value="/opt/gurobi605/linux64/"/>

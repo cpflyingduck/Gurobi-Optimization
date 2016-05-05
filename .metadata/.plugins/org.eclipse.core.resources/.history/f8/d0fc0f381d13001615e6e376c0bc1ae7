@@ -8,8 +8,8 @@ import gurobi.*;
 public class Main {
 
 	// provide the path for the student, course id and the semester data
-	//static String fileLoc1 = "../Gurobi/resources/small/student_demand_10.csv";
-	static String fileLoc1 = "../Gurobi/resources/medium/student_demand_600.csv";
+	static String fileLoc1 = "../Gurobi/resources/small/student_demand_10.csv";
+	//static String fileLoc1 = "../Gurobi/resources/medium/student_demand_600.csv";
 	//static String fileLoc1 = "../Gurobi/resources/testfiles/demand10000.csv";
 	
 	// provide the path for the course dependency
@@ -28,7 +28,8 @@ public class Main {
 
 
 	public static void main(String[] args) throws FileNotFoundException, Exception {
-	
+		// TODO Auto-generated method stub
+
 		// get the student, course and term matrix
 		File file1 = new File(fileLoc1);
 		Student studentCourseTerm = new Student(file1);
@@ -182,7 +183,7 @@ public class Main {
 			}
 
 			// update the model to add integrate new variables
-			model.setObjective(objective);
+			extracted(model, objective);
 			model.update();
 
 			// solve the model
@@ -202,5 +203,10 @@ public class Main {
 		} catch (GRBException ex) {
 			System.out.println("Error code: " + ex.getErrorCode() + ". " + ex.getMessage());
 		}
+	}
+
+
+	private static void extracted(GRBModel model, GRBLinExpr objective) throws GRBException {
+		model.setObjective(objective);
 	}
 }
