@@ -1,0 +1,46 @@
+package edu.gatech.cs6310.projectOne;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+
+import gurobi.*;
+
+public class Main {
+
+	// provide the path for the student, course id and the semester data
+	static String fileLoc1 = "../Homework1_Code_Matrix/resources/small/student_demand_10.csv";
+	//static String fileLoc1 = "../Homework1_Code_Matrix/resources/medium/student_demand_600.csv";
+	//static String fileLoc1 = "../Homework1_Code_Matrix/resources/testfiles/demand10000.csv";
+	
+	// provide the path for the course dependency
+	static String fileLoc2 = "../Homework1_Code_Matrix/resources/static/course_dependencies.csv";
+	// file location for the courses offered
+	static String fileLoc3 = "../Homework1_Code_Matrix/resources/static/courses.csv";
+
+	// number of students
+	private static int TOTAL_STUDENT; // the total number of students are read from the file itself
+	// number of classes offered in total
+	private static final int TOTAL_COURSE = 18;
+	// total number of terms
+	private static final int TOTAL_TERM = 12;
+	// max number of courses allowed to a student in a semester
+	private static final int MAX_CLASS_SIZE_PER_TERM = 2;
+
+
+	public static void main(String[] args) throws FileNotFoundException, Exception {
+		// TODO Auto-generated method stub
+
+		// get the student, course and term matrix
+		File file1 = new File(fileLoc1);
+		Student studentCourseTerm = new Student(file1);
+
+		// get total number of students from
+		TOTAL_STUDENT = studentCourseTerm.numberOfStudents();
+		// System.out.println(TOTAL_STUDENT); 
+		
+
+
+		//Gurobi optimization begins here
+
+	}
+}
