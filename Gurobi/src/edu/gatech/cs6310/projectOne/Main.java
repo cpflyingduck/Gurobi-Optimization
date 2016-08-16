@@ -8,8 +8,8 @@ import gurobi.*;
 public class Main {
 
 	// provide the path for the student, course id and the semester data
-	//static String fileLoc1 = "../Gurobi/resources/small/student_demand_10.csv";
-	static String fileLoc1 = "../Gurobi/resources/medium/student_demand_600.csv";
+	static String fileLoc1 = "../Gurobi/resources/small/student_demand_10.csv";
+	//static String fileLoc1 = "../Gurobi/resources/medium/student_demand_600.csv";
 	//static String fileLoc1 = "../Gurobi/resources/testfiles/demand10000.csv";
 	
 	// provide the path for the course dependency
@@ -25,8 +25,7 @@ public class Main {
 	private static final int TOTAL_TERM = 12;
 	// max number of courses allowed to a student in a semester
 	private static final int MAX_CLASS_SIZE_PER_TERM = 2;
-
-
+	
 	public static void main(String[] args) throws FileNotFoundException, Exception {
 	
 		// get the student, course and term matrix
@@ -48,6 +47,8 @@ public class Main {
 		File file3 = new File(fileLoc3);
 		Semester courseOf = new Semester(file3);
 		int Ac[][] = courseOf.courseOffering();
+		
+		
 
 		//Gurobi optimization begins here
 		
